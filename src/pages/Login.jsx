@@ -5,6 +5,7 @@ import logo from "../assets/logo.png";
 import toast from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { host } from "../data";
 
 import "./Register.css";
 
@@ -29,7 +30,7 @@ const Login = () => {
     event.preventDefault();
     if (handlevalidation()) {
       const { data } = await axios.post(
-        "http://localhost:5000/api/login",
+        `${host}/api/login`,
         user
       );
 

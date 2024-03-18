@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import loader from "../assets/loader.gif";
 import "./SetAvatar.css";
+import { host } from "../data";
 import toast from "react-hot-toast";
 
 const SetAvatar = () => {
@@ -86,7 +87,7 @@ const SetAvatar = () => {
     } else {
       const user = await JSON.parse(localStorage.getItem("chat-app-user"));
       const { data } = await axios.post(
-        `http://localhost:5000/api/setavatar/${user._id}`,
+        `${host}/api/setavatar/${user._id}`,
         {
           image: avatars[selectedAvatar],
         }

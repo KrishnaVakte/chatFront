@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard.jsx";
 import { FaArrowLeft } from "react-icons/fa";
+import { host } from "../data.js";
 
 export default function ChatContainer({ currentChat, currentUser, socket }) {
   const [messages, setmessages] = useState([]);
@@ -21,7 +22,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
         return; // Exit early if currentUser is undefined
       }
 
-      const response = await axios.post("http://localhost:5000/api/getallmsg", {
+      const response = await axios.post(`${host}/api/getallmsg`, {
         from: currentUser._id,
         to: currentChat._id,
       });
@@ -32,7 +33,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
   }, [currentChat, currentUser]);
 
   const handleSendMessage = async (msg) => {
-    await axios.post("http://localhost:5000/api/addmessage", {
+    await axios.post(`${host}/api/addmessage`, {
       from: currentUser._id,
       to: currentChat._id,
       message: msg,

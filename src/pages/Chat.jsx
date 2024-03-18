@@ -6,6 +6,7 @@ import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
+import { host } from "../data";
 
 const Chat = () => {
   const socket = useRef();
@@ -28,7 +29,7 @@ const Chat = () => {
 
   useEffect(() => {
     if (currentUser) {
-      socket.current = io("http://localhost:5000");
+      socket.current = io(host);
       socket.current.emit("add-user", currentUser._id);
     }
   }, [currentUser]);
@@ -38,7 +39,7 @@ const Chat = () => {
       if (currentUser) {
         if (currentUser.isAvatarImageSet) {
           const data = await axios.get(
-            `http://localhost:5000/api/allusers/${currentUser._id}`
+            `${host}/api/allusers/${currentUser._id}`
           );
 
           setcontacts(data.data);

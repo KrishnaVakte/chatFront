@@ -1,0 +1,1 @@
+export const host = "https://chat-backend-tau-one.vercel.app"

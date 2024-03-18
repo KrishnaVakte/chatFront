@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 
 import "./Register.css";
+import { host } from "../data";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Register = () => {
     event.preventDefault();
     if (handlevalidation()) {
       const { data } = await axios.post(
-        "http://localhost:5000/api/register",
+        `${host}/api/register`,
         user
       );
 
