@@ -1,0 +1,9 @@
+.Zontainer {
+  height: 70%;
+}
+
+@media screen and (max-width: 650px) {
+  .Zontainer {
+    height: 100%;
+  }
+}

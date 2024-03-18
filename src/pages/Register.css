@@ -1,0 +1,101 @@
+.main {
+  height: 100vh;
+  /* width: 100vw;  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #131324;
+}
+
+.brandlogo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  img {
+    height: 5rem;
+  }
+  h1 {
+    color: rgb(14, 223, 42);
+  }
+}
+
+form {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #00000076;
+  border-radius: 2rem;
+  padding: 3rem 5rem;
+}
+
+input {
+  background-color: transparent;
+  padding: 1rem;
+  border: 0.1rem solid #4e0eff;
+  border-radius: 0.4rem;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  &:focus {
+    border: 0.1rem solid #997af0;
+    outline: none;
+  }
+}
+
+button {
+  background-color: #4e0eff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #4e0eff;
+  }
+}
+
+span {
+  color: white;
+  text-transform: uppercase;
+  a {
+    color: #4e0eff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    padding: 2rem;
+    height: 100vh;
+    /* height: 80vh; */
+  }
+  .brandlogo {
+    gap: 0;
+    img {
+      height: 4rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  form {
+    padding: 1.5rem;
+    width: 100%;
+  }
+  input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

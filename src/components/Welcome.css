@@ -1,0 +1,37 @@
+.Nontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background-color: #625aca4d;
+  border-radius: 1rem;
+}
+
+.Nontainer img {
+  height: 20rem;
+}
+
+.Nontainer span {
+  color: #9f0eff;
+}
+
+@media screen and (max-width: 650px) {
+  .Nontainer {
+    padding-top: 2rem; /* Add padding to move the header down */
+    text-align: center; /* Center the text horizontally */
+    display: none;
+  }
+
+  .Container img {
+    display: none;
+    /* Hide the image on smaller screens */
+  }
+
+  .Container span {
+    font-size: 2rem; /* Increase font size for the header text */
+    font-weight: bold; /* Add bold font weight for emphasis */
+    color: #4e0eff;
+    display: none; /* Adjust text color if needed */
+  }
+}

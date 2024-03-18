@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: #131324;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loader {
+  max-inline-size: 100%;
+}
+
+.title-container {
+  h1 {
+    color: white;
+  }
+}
+.avatars {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .avatar {
+    border: 0.4rem solid transparent;
+    padding: 0.4rem;
+    border-radius: 50%; /* Make the border circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+
+    /* Adjust the size of the avatar container */
+    width: 7rem;
+    height: 7rem;
+
+    img {
+      width: 100%; /* Adjust image width to fill container */
+      height: 100%; /* Adjust image height to fill container */
+      object-fit: cover; /* Ensure the image covers the entire container */
+      border-radius: 50%; /* Make the image circular */
+      transition: 0.5s ease-in-out;
+    }
+  }
+
+  .selected {
+    border: 0.4rem solid #4e0eff;
+  }
+}
+
+.submit-btn {
+  background-color: #4e0eff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #4e0eff;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .avatars {
+    .avatar {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+
+  .submit-btn {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Style to center the header text */
+  .title-container {
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+}

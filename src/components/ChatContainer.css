@@ -1,0 +1,117 @@
+.Montainer {
+  /* padding-top: 1rem; */
+  display: grid;
+  grid-template-rows: 10% 78% 12%;
+  /* gap: 1rem; */
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  border: 2px solid #32af1730;
+  border-radius: 1rem;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  margin-left: -1.8rem;
+}
+
+.user-details button {
+  background-color: red;
+}
+
+.username h3 {
+  color: white;
+  margin-left: 1rem;
+}
+
+.avatar img {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid blue;
+  border-radius: 50%;
+}
+
+.chat-messages {
+  padding: 1rem 2rem;
+  display: flex;
+  border-radius: 0.5rem;
+  flex-direction: column;
+  background-color: #0f113a;
+  /* box-shadow: 5px 5px 10px rgb(0, 102, 255); */
+  gap: 1rem;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0.2rem;
+    &-thumb {
+      background-color: #ffffff39;
+      width: 0.1rem;
+      border-radius: 1rem;
+    }
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    .content {
+      max-width: 40%;
+      overflow-wrap: break-word;
+      padding: 0.4rem 0.7rem;
+      font-size: 1.1rem;
+      border-radius: 1rem;
+      color: #d1d1d1;
+    }
+  }
+  .sended {
+    justify-content: flex-end;
+    .content {
+      background: linear-gradient(#004cff, #00ddff6e);
+    }
+  }
+  .recieved {
+    justify-content: flex-start;
+    .content {
+      background: linear-gradient(#964233, #caa21d8c);
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .Montainer {
+    position: fixed; /* Fix the Montainer component */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Align it to the left */
+    right: 0; /* Align it to the right */
+    bottom: auto; /* Ensure it doesn't stick to the bottom */
+    width: 100%; /* Take up the full width */
+    height: 100vh; /* Allow height to adjust based on content */
+    z-index: 999; /* Set a high z-index to ensure it's on top of other content */
+  }
+
+  .chat-header {
+    width: 100%;
+    margin: 0px auto;
+    background-color: #0d0d30;
+    border-radius: 0px;
+    gap: 1.5rem;
+    border: 1px solid rgb(20, 87, 59);
+
+    .avatar img {
+      height: 3rem;
+      width: 3rem;
+      border: 1px solid blue;
+      border-radius: 50%;
+    }
+  }
+
+  .chat-messages {
+    width: 100%;
+    margin: 0px auto;
+  }
+}

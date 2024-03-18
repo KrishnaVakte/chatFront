@@ -1,0 +1,150 @@
+.Bontainer {
+  display: grid;
+  grid-template-rows: 10% 75% 15%;
+  overflow: hidden;
+  background-color: #080420;
+  border-radius: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 2rem; */
+}
+
+.brand img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.brand h3 {
+  color: rgb(14, 172, 14);
+  font-size: 2rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  gap: 0.8rem;
+  &::-webkit-scrollbar {
+    width: 0.2rem;
+    &-thumb {
+      background-color: #ffffff39;
+      width: 0.1rem;
+      border-radius: 1rem;
+    }
+  }
+
+  .selected {
+    background-color: #964edf7c;
+  }
+}
+
+.contact {
+  background-color: #7827da57;
+  min-height: 3rem;
+  width: 90%;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  gap: 1rem;
+  align-items: center;
+  display: flex;
+  transition: 0.5s ease-in-out;
+  border-bottom: 2px solid #e3ecea;
+}
+
+.contact .avatar img {
+  width: 2.5rem; /* Adjust width as needed */
+  height: 2.5rem; /* Adjust height as needed */
+  border-radius: 50%;
+}
+
+.username h3 {
+  color: white;
+}
+
+.current-user {
+  background-color: #0d0d30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid rgb(20, 87, 59);
+  border-radius: 1rem;
+  height: 4rem;
+  margin-top: 1rem;
+}
+
+.current-user .avatar img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  max-inline-size: 100%;
+}
+
+.current-user .username h2 {
+  color: white;
+}
+
+@media screen and (max-width: 650px) {
+  .Bontainer {
+    grid-template-rows: auto;
+    order: -1; /* Adjust grid rows for responsiveness */
+  }
+
+  .brand {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: -2;
+  }
+
+  .brand img {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .brand h3 {
+    font-size: 2rem;
+  }
+
+  .contacts {
+    /* margin-top: -130px; */
+  }
+
+  .contact {
+    width: 80%;
+    height: 2rem;
+    margin-left: -20px;
+  }
+
+  .contact .avatar img {
+    width: 2rem; /* Adjust avatar image width */
+    height: 2rem; /* Adjust avatar image height */
+  }
+
+  .current-user .avatar img {
+    height: 2.5rem; /* Adjust current user avatar height */
+    width: 2.5rem;
+  }
+
+  .current-user {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 1rem auto;
+    margin-left: 2rem;
+    height: 3rem;
+  }
+
+  .current-user .username h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+}

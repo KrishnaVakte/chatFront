@@ -1,0 +1,31 @@
+.Vontainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #131324;
+}
+
+.vontainer {
+  height: 85vh;
+  width: 85vw;
+  background-color: #00000076;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+  .Vontainer {
+    padding: 0; /* Remove padding to reduce space */
+  }
+
+  .vontainer {
+    height: 90vh; /* Increase height to bring it closer to the top */
+    width: 95vw; /* Adjust width for better responsiveness */
+    grid-template-columns: 100%;
+    margin-top: -50px; /* Change to a single column layout */
+  }
+}
