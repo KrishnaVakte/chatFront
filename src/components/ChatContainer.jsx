@@ -21,16 +21,19 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
         console.log("currentUser is undefined");
         return; // Exit early if currentUser is undefined
       }
+      if (currentChat) {
+        const response = await axios.post(`${host}/api/getallmsg`, {
+          from: currentUser._id,
+          to: currentChat._id,
+        });
+        setmessages(response.data);
+        
+      }
 
-      const response = await axios.post(`${host}/api/getallmsg`, {
-        from: currentUser._id,
-        to: currentChat._id,
-      });
-      setmessages(response.data);
     };
 
     fetchData();
-  }, [currentChat, currentUser]);
+  }, [currentChat]);
 
   const handleSendMessage = async (msg) => {
     await axios.post(`${host}/api/addmessage`, {
