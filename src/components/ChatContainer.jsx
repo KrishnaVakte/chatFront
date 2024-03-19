@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ChatContainer.css";
-import Logout from "./Logout.jsx";
 import ChatInput from "./ChatInput.jsx";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { Link } from "react-router-dom";
-import Dashboard from "./Dashboard.jsx";
 import { FaArrowLeft } from "react-icons/fa";
 import { host } from "../data.js";
 
